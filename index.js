@@ -1,6 +1,8 @@
 const firstVar = document.querySelector(".firstVar");
 const secondVar = document.querySelector(".secondVar");
 const result = document.querySelector("#result");
+let mygtukai = document.querySelectorAll("button");
+
 let sum = document.querySelector(".sum");
 let sub = document.querySelector(".sub");
 let div = document.querySelector(".div");
@@ -11,13 +13,11 @@ let res = document.querySelector(".res");
 firstVar.addEventListener("input", inputValue1);
 function inputValue1(event) {
   skaicius1 = event.target.value;
-  return skaicius1;
 }
 
 secondVar.addEventListener("input", inputValue2);
 function inputValue2(event) {
   skaicius2 = event.target.value;
-  return skaicius2;
 }
 /*
 sum.addEventListener("click", add);
@@ -47,10 +47,9 @@ function reset() {
   secondVar.value = "";
   result.innerHTML = "";
 }
-
-const Skaiciuokle = null;
+/*
 switch (Skaiciuokle) {
-  case sum.addEventListener("click", add):
+  case forEach()mygtukai.addEventListener("click", add):
     function add() {
       result.innerHTML = Number(skaicius1) + Number(skaicius2);
     }
@@ -75,4 +74,27 @@ switch (Skaiciuokle) {
       result.innerHTML = Number(skaicius1) % Number(skaicius2);
     }
     break;
+}
+*/
+
+for (let i = 0; i < mygtukai.length; i++) {
+  mygtukai[i].addEventListener("click", (event) => {
+    switch (mygtukai[i].className) {
+      case "sum":
+        result.textContent = Number(skaicius1) + Number(skaicius2);
+        break;
+      case "sub":
+        result.textContent = Number(skaicius1) - Number(skaicius2);
+        break;
+      case "div":
+        result.textContent = Number(skaicius1) / Number(skaicius2);
+        break;
+      case "mul":
+        result.textContent = Number(skaicius1) * Number(skaicius2);
+        break;
+      case "mod":
+        result.textContent = Number(skaicius1) % Number(skaicius2);
+        break;
+    }
+  });
 }
